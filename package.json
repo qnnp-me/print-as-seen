@@ -1,0 +1,26 @@
+{
+  "name": "@qnnp/print-as-seen",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "private": false,
+  "scripts": {
+    "publish:major[+.0.0]": "sh publish.sh major",
+    "publish:minor[0.+.0]": "sh publish.sh minor",
+    "publish:patch[0.0.+]": "sh publish.sh patch",
+    "build": "php build.php",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "print"
+  ],
+  "author": "qnnp",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/qnnp-me/print-as-seen",
+    "type": "git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

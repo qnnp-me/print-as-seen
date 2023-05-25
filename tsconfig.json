@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es5",
+    "allowJs": true,
+    "removeComments": false,
+    "declaration": true,
+    "declarationDir": "types",
+    "outDir": "dist",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "types": [
+    ]
+  }
+}
