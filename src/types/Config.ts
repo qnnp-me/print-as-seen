@@ -1,3 +1,3 @@
 declare type Config = {
-    style?: CSSStyleRule['cssText']
+    styleSheet?: { [k: string]: Partial<CSSStyleDeclaration> }
 }

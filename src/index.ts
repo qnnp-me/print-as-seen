@@ -12,8 +12,22 @@ const copyStylesToClone = (elA: Element, elB: Element) => {
         copyStylesToClone(elA.children[i], elB.children[i])
     }
 }
-export const printAsSeen = (element: HTMLElement, config: Config = {}) => {
-
+const convertStyleObjectToString = (style) => {
+    const el = document.createElement('div')
+    for (const key in style) {
+        el.style[key] = style[key]
+    }
+    return el.style.cssText
+}
+const convertStyleSheetToString = (style) => {
+    let str = ''
+    for (const key in style) {
+        str += `${key}{${convertStyleObjectToString(style[key])}}`
+    }
+    return str
+}
+export const printAsSeen = (element: HTMLElement, config: Config) => {
+    config = config || {}
     const data = element.cloneNode(true) as Element
     copyStylesToClone(element, data)
 
@@ -25,7 +39,7 @@ export const printAsSeen = (element: HTMLElement, config: Config = {}) => {
     const iframeInnerWindow = iframe.contentWindow
     const iframeInnerStyle = document.createElement('style')
 
-    iframeInnerStyle.innerHTML += config.style || ''
+    iframeInnerStyle.innerHTML += convertStyleSheetToString(config.styleSheet)
 
     iframeInnerDocument.body.append(data)
     iframeInnerDocument.head.append(iframeInnerStyle)
