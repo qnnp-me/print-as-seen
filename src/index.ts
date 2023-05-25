@@ -1,3 +1,4 @@
+/// <reference path="ref.ts" />
 const setStyle = (element: HTMLElement, style: CSSStyleDeclaration) => {
     for (let i = 0; i < style.length; i++) {
         const key = style[i]
@@ -11,7 +12,7 @@ const copyStylesToClone = (elA: Element, elB: Element) => {
         copyStylesToClone(elA.children[i], elB.children[i])
     }
 }
-export const printAsSeen = (element: HTMLElement, config: Config) => {
+export const printAsSeen = (element: HTMLElement, config: Config = {}) => {
 
     const data = element.cloneNode(true) as Element
     copyStylesToClone(element, data)
