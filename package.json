@@ -1,7 +1,7 @@
 {
   "homepage": "https://github.com/qnnp-me/print-as-seen",
   "name": "@qnnp/print-as-seen",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/index.js",
   "private": false,
