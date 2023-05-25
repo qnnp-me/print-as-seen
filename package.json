@@ -16,11 +16,8 @@
   ],
   "author": "qnnp",
   "license": "MIT",
-  "repository": {
-    "url": "https://github.com/qnnp-me/print-as-seen",
-    "type": "git"
-  },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
